@@ -30,9 +30,10 @@ The API and web UI are available at <http://localhost:8080>. The port is
 published only on the host's loopback interface, and the configured API key is
 required by the server.
 
-`./models` is mounted read-only, `./cache` persists Basalt's runtime cache, and
-the configuration file is mounted read-only. All host paths are relative to
-this workspace.
+`./models` is mounted read-only. Models must be downloaded manually to this folder.
+Change `- /root/models:/models:ro` to `- ./models:/models:ro` or to your preferred model folder in docker-compose.yml
+`./cache` persists Basalt's runtime cache, and the configuration file is mounted read-only.
+All host paths are relative to this workspace.
 
 ## Build controls
 
@@ -48,3 +49,21 @@ Basalt's build and runtime requirements are documented in the upstream
 [building guide](https://github.com/jesdga95/basalt/blob/main/docs/building.md),
 [running guide](https://github.com/jesdga95/basalt/blob/main/docs/running.md),
 and [configuration reference](https://github.com/jesdga95/basalt/blob/main/docs/configuration/index.md).
+
+## License
+
+The Dockerfile, `docker-compose.yml`, `basalt_config.json`, `.env.example` and
+the docs in this repository are MIT — see [LICENSE](LICENSE).
+
+What they run is someone else's:
+
+- [Basalt](https://github.com/jesdga95/basalt) is MIT. It in turn includes
+  Strata (MIT), ggml and llama.cpp (MIT), stb_image (MIT) and Infernix
+  (Apache-2.0). See its `THIRD_PARTY_LICENSES`.
+- The `.basalt` model files are **not** MIT. They derive from
+  Qwen3.8-Flash-Next is distributed under the
+  [Qwen Community License 1.0](https://huggingface.co/jesdga/Qwen3.8-Flash-Next-Basalt/blob/main/LICENSE)
+- The GSQ-RCO quants come from
+  [ISTA-DASLab](https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF)
+  (IST Austria). Citing [GSQ](https://arxiv.org/abs/2604.18556) and
+  [RCO](https://arxiv.org/abs/2605.00649) is requested.

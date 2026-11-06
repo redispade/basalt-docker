@@ -1,0 +1,7 @@
+# Created by the first run (or symlinked by hand); never committed.
+models
+cache
+
+.env
+.env.local
+__pycache__/
