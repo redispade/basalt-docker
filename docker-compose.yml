@@ -10,6 +10,7 @@ services:
     gpus: all
     init: true
     restart: unless-stopped
+    shm_size: 1gb
     ports:
       - "11440:8080"
     command:

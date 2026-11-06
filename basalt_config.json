@@ -1,6 +1,12 @@
 {
   "version": 2,
-  "models": [{ "model": "models/Qwen3.8-FN-GSQ-RCO-IQ3_XXS.basalt", "gpu": "0", "kv": "int8" }],
-  "engine": { "resident-experts": true },
-  "server": { "port": 8080 }
+  "models": [{ "model": "/models/Qwen3.8-FN-GSQ-RCO-IQ3_XXS.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-sleep": 600, "fit-max-tokens": true }],
+  "engine": {
+    "resident-experts": true,
+    "vram-reserve-mib": 512,
+    "expert-profile-save": "/home/basalt/.cache/expert.prof",
+    "expert-profile-save-every": 60,
+    "conversation-cache-mib": 4096
+  },
+  "server": { "host": "0.0.0.0", "port": 8080, "lazy": true }
 }
