@@ -1,0 +1,21 @@
+services:
+  basalt:
+    build:
+      context: .
+      args:
+        BASALT_REF: ${BASALT_REF:-main}
+        BUILD_JOBS: ${BUILD_JOBS:-16}
+        APP_UID: ${LOCAL_UID:-1000}
+        APP_GID: ${LOCAL_GID:-1000}
+    gpus: all
+    init: true
+    restart: unless-stopped
+    ports:
+      - "11440:8080"
+    command:
+      - --api-key
+      - "${BASALT_API_KEY:?Set BASALT_API_KEY in .env}"
+    volumes:
+      - ./basalt_config.json:/config/basalt_config.json:ro
+      - ./models:/models:ro
+      - ./cache:/home/basalt/.cache

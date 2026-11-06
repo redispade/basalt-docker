@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "models": [{ "model": "models/Qwen3.8-FN-GSQ-RCO-IQ3_XXS.basalt", "gpu": "0", "kv": "int8" }],
+  "engine": { "resident-experts": true },
+  "server": { "port": 8080 }
+}
