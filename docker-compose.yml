@@ -18,5 +18,5 @@ services:
       - "${BASALT_API_KEY:?Set BASALT_API_KEY in .env}"
     volumes:
       - ./basalt_config.json:/config/basalt_config.json:ro
-      - /root/models:/models:ro
+      - ${MODELS_VOLUME:-./models}:/models:ro
       - ./cache:/home/basalt/.cache
