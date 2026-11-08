@@ -1,8 +1,8 @@
 {
   "version": 2,
   "models": [
-    { "model": "/models/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-sleep": 600, "fit-max-tokens": true },
-    { "model": "/models/Qwen3.8-FN-GSQ-RCO-IQ3_XXS.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-sleep": 600, "fit-max-tokens": true }
+    { "model": "/models/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-unload": 600, "fit-max-tokens": true },
+    { "model": "/models/Qwen3.8-FN-GSQ-RCO-IQ3_XXS.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-unload": 600, "fit-max-tokens": true }
   ],
   "engine": {
     "resident-experts": true,
