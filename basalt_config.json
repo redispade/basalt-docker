@@ -1,14 +1,13 @@
 {
   "version": 2,
   "models": [
-    { "model": "/models/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-unload": 600, "fit-max-tokens": true },
-    { "model": "/models/Qwen3.8-FN-GSQ-RCO-IQ3_XXS.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-unload": 600, "fit-max-tokens": true }
+    {"model": "/models/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-unload": 600, "fit-max-tokens": true, "expert-profile-save": "/home/basalt/.cache/expert.swift.prof" },
+    {"model": "/models/Qwen3.8-FN-GSQ-RCO-IQ3_XXS.basalt", "gpu": "0", "kv": "int8", "max-context": 262144, "vision": "dynamic", "idle-unload": 600, "fit-max-tokens": true, "expert-profile-save": "/home/basalt/.cache/expert.fn.prof" }
   ],
   "engine": {
     "resident-experts": true,
     "vram-reserve-mib": 512,
-    "expert-profile-save": "/home/basalt/.cache/expert.prof",
-    "expert-profile-save-every": 60,
+    "expert-profile-save-every": 0.5,
     "conversation-cache-mib": 4096
   },
   "server": { "host": "0.0.0.0", "port": 8080, "lazy": true }
